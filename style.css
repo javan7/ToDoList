@@ -40,7 +40,7 @@ p {
   width: 80px;
   border: 1px solid rgb(199, 253, 3);
   border-radius: 15px;
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.7);
   color: white;
 }
 
@@ -62,7 +62,7 @@ p {
   letter-spacing: 1px;
 }
 .list li::first-letter {
-  color: red;
+  color: green;
   text-transform: uppercase;
 }
 

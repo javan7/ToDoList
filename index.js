@@ -105,8 +105,8 @@ const render = (element) => {
   buttonEdit.addEventListener("click", () => editTask(element.id));
   buttonEdit.style.marginLeft = "15px";
   button.style.marginLeft = "15px";
-  buttonEdit.style.background = "green";
-  button.style.background = "red ";
+  buttonEdit.style.background = "rgba(0,128,0,0.7)";
+  button.style.background = "rgba(255,0,0,0.7)";
   buttonEdit.style.color = "white";
   button.style.color = "white";
   button.style.outline = "none";
