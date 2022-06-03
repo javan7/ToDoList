@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(238, 240, 113, 0.5);
+}
+
+p {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+  opacity: 70%;
+  color: rgb(65, 70, 78);
+}
+.find,
+.inp {
+  background-color: rgba(209, 42, 30, 0.2);
+  color: rgb(48, 58, 4);
+  place-content: "write";
+  height: 40px;
+  border: 1px solid rgb(199, 253, 3);
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  outline: none;
+  margin-bottom: 15px;
+}
+.findbtn,
+.btn {
+  text-transform: uppercase;
+  height: 40px;
+  width: 80px;
+  border: 1px solid rgb(199, 253, 3);
+  border-radius: 15px;
+  background-color: green;
+  color: white;
+}
+
+.list {
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid rgb(199, 253, 3);
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  color: darkslategray;
+  background-color: rgba(209, 42, 30, 0.2);
+  list-style: none;
+}
+.list li {
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+.list li::first-letter {
+  color: red;
+  text-transform: uppercase;
+}
