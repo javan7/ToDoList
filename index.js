@@ -90,7 +90,7 @@ const render = (element) => {
   } else {
     taskText = document.createElement("span");
     taskText.innerHTML = element.value;
-    buttonEdit.innerHTML = `${"&hellip;"}`;
+    buttonEdit.innerHTML = `${"&#9998;"}`;
   }
   taskText.style.outline = "none";
   taskText.style.border = "none";
@@ -109,6 +109,12 @@ const render = (element) => {
   button.style.background = "red ";
   buttonEdit.style.color = "white";
   button.style.color = "white";
+  button.style.outline = "none";
+  button.style.border = "none";
+  buttonEdit.style.outline = "none";
+  buttonEdit.style.border = "none";
+  button.style.borderRadius = "50%";
+  buttonEdit.style.borderRadius = "50%";
   li.append(taskText);
   li.append(buttonEdit);
   li.append(button);
