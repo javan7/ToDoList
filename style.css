@@ -65,3 +65,7 @@ p {
   color: red;
   text-transform: uppercase;
 }
+
+.none {
+  display: none;
+}

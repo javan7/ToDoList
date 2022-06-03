@@ -10,8 +10,7 @@ const myStorage = window.localStorage;
 let inputText = "";
 let inputFindText = "";
 let arrData = JSON.parse(myStorage.getItem("taskSaver")) || [];
-let filtredData = arrData;
-
+let filtredData = [...arrData];
 let id = 3;
 
 /** business block **/
@@ -82,14 +81,26 @@ const render = (element) => {
     taskText.addEventListener("keyup", (event) =>
       saveTask(element.id, event.target.value)
     );
-    buttonEdit.innerHTML = "сохранить";
+    taskText.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        editTask(element.id);
+      }
+    });
+    buttonEdit.innerHTML = `${"&#10004;"}`;
   } else {
     taskText = document.createElement("span");
     taskText.innerHTML = element.value;
-    buttonEdit.innerHTML = "редактировать";
+    buttonEdit.innerHTML = `${"&hellip;"}`;
   }
-
-  button.innerHTML = "удалить";
+  taskText.style.outline = "none";
+  taskText.style.border = "none";
+  taskText.style.borderRadius = "15px";
+  taskText.style.background = "rgba(209, 42, 30, 0)";
+  taskText.style.fontSize = "20px";
+  taskText.style.fontWeight = "bold";
+  taskText.style.color = "darkslategray";
+  taskText.style.maxWidth = "150px";
+  button.innerHTML = `${"&#10006;"}`;
   button.addEventListener("click", () => removeTask(element.id));
   buttonEdit.addEventListener("click", () => editTask(element.id));
   buttonEdit.style.marginLeft = "15px";
@@ -116,6 +127,11 @@ const addTask = () => {
       render(item);
     });
   }
+  if (arrData.length == 0) {
+    list.classList.add("none");
+  } else {
+    list.classList.remove("none");
+  }
   myStorage.setItem("taskSaver", JSON.stringify(arrData));
 };
 
@@ -123,6 +139,11 @@ addTask();
 
 /** listeners **/
 inp.addEventListener("keyup", getText);
+inp.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    changeData(arrData, inputText);
+  }
+});
 btn.addEventListener("click", () => changeData(arrData, inputText));
 find.addEventListener("keyup", getFindText);
 findbtn.addEventListener("click", () => filtredArr(arrData, inputFindText));
